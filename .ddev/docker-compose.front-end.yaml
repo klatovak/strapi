@@ -1,0 +1,18 @@
+version: '3.6'
+
+services:
+  front-end:
+    ports:
+      - 3000:3000
+    # depends_on:
+    #   - expressjs
+    build:
+      context: ../services/front-end
+      dockerfile: ./Dockerfile
+    volumes:
+      - ../services/front-end/pages:/app/pages
+      - ../services/front-end/utils:/app/utils
+      - ../services/front-end/source:/app/source
+      - ../services/front-end/public:/app/public:cached
+      - ../.env:/app/.env:cached
+    working_dir: /app
