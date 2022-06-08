@@ -1,5 +1,11 @@
 var pluralize = require('pluralize');
 
+function getApiUrl() {
+  return typeof document === 'undefined'
+    ? process.env.NEXT_PUBLIC_API_URL
+    : process.env.NEXT_PUBLIC_API_CLIENT_URL;
+}
+
 export function getStrapiMedia(url) {
   if (url == null) {
     return null;
@@ -7,12 +13,12 @@ export function getStrapiMedia(url) {
   if (url.startsWith('http') || url.startsWith('//')) {
     return url;
   }
-  return `${process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'}${url}`;
+  return `${process.env.NEXT_PUBLIC_API_CLIENT_URL || 'http://localhost:1337'}${url}`;
 }
 
 export function getStrapiURL(path) {
   return `${
-    process.env.NEXT_PUBLIC_API_URL || 'http://localhost:1337'
+    getApiUrl() || 'http://localhost:1337'
   }/api${path}`;
 }
 
