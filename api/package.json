@@ -31,8 +31,8 @@
     "uuid": "FOODADVISOR-LOCAL-ede70071-db3d-44ae-bb72-8b45fb14391f"
   },
   "engines": {
-    "node": ">=12.x.x <=16.x.x",
-    "npm": ">=6.0.0"
+    "node": ">=16.x.x",
+    "npm": ">=8.0.0"
   },
   "license": "MIT"
 }
