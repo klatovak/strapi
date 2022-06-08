@@ -5,8 +5,8 @@
   "description": "A Strapi application",
   "scripts": {
     "develop": "strapi develop",
-    "start": "strapi start",
-    "build": "strapi build",
+    "start": "./node_modules/.bin/strapi start",
+    "build": "./node_modules/.bin/strapi build",
     "strapi": "strapi",
     "seed": "node script/seed.js"
   },
