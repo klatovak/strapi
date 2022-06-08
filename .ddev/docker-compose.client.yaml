@@ -8,10 +8,10 @@ services:
       - api
     build:
       context: ../client
-      dockerfile: ./Dockerfile
+    env_file: ../client/.env
     volumes:
+      - ../client/adapters:/app/adapters
       - ../client/pages:/app/pages
       - ../client/utils:/app/utils
       - ../client/components:/app/components
       - ../client/public:/app/public:cached
-    working_dir: /app

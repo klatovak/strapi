@@ -13,7 +13,6 @@ WORKDIR /app
 COPY package*.json data.zip ./
 
 # Need to be writable in the container
-COPY database ./database
 COPY public ./public
 COPY script ./script
 
